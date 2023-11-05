@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv6nmfpy6w5le"]
+
+[ext_resource type="Texture2D" uid="uid://cnfdnch351kks" path="res://campo.jpg" id="1_55eey"]
+[ext_resource type="Script" path="res://Bola.gd" id="2_3rtan"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux5t3"]
+albedo_texture = ExtResource("1_55eey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eojhh"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Campo" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0993798, 0, 0, 0, 1, 3, 0, 4.5)
+size = Vector3(6, 1, 9)
+material = SubResource("StandardMaterial3D_ux5t3")
+
+[node name="Bola" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
+radius = 0.021
+material = SubResource("StandardMaterial3D_eojhh")
+script = ExtResource("2_3rtan")
+
+[node name="Camera3D" type="Camera3D" parent="Bola"]
+transform = Transform3D(-0.724069, 0.2468, -0.64406, 0.0144162, 0.939001, 0.343612, 0.689577, 0.239514, -0.68346, -0.328255, 0.455974, -0.345033)
+fov = 65.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.052336, 0.950824, -0.305276, 0, 0.305695, 0.952129, 0.99863, -0.0498306, 0.0159989, -2.27958, 3.95228, 3.87375)
