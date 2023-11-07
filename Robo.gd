@@ -44,7 +44,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	frametime += delta
-	if robo_t[cont] != null and distbola > (radius + bola.radius):
+	if robo_t[cont] != null and distbola > 0.2:
 		if frametime >= robo_t[cont] and robo_t[cont] != 20 and (cont < len(robo_x) and cont < len(robo_y)):
 			distbola = sqrt((bola.position.x - position.x)**2 + (bola.position.z - position.z)**2)
 			print(distbola)
