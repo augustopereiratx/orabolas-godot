@@ -22,11 +22,11 @@ func read_data_from_list(list):
 			elif i == 2:
 				y = float(linearr[i])
 		if time != null:
-			bola_t.append(x)
+			bola_t.append(time)
 		if x != null:
 			bola_x.append(x)
 		if y != null:
-			bola_y.append(x)
+			bola_y.append(y)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
@@ -39,7 +39,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	frametime += delta
-	print(int(frametime))
 	if frametime >= bola_t[cont] and bola_t[cont] != 20:
 		position.x = bola_x[cont]
 		position.z = bola_y[cont]
